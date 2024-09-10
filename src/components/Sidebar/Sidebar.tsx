@@ -16,6 +16,7 @@ const Sidebar = ({ children }: SidebarProps) => {
     <>
       <div className="h-screen">
         <nav className="h-full flex flex-col bg-white border-r shadow-sm w-fit">
+
           {/* head */}
           <div className="p-4 pb-4 flex items-center justify-between">
             <h2 className={`font-bold text-xl overflow-hidden transition-all ${expandedMode ? "w-32" : "w-0"}`}>
@@ -29,13 +30,13 @@ const Sidebar = ({ children }: SidebarProps) => {
               {expandedMode ? <ChevronFirst /> : <ChevronLast />}
             </button>
           </div>
+
           {/* Sidebar menu items */}
           <SidebarContext.Provider value={{ expandedMode, toggleExpandedMode }}>
             <ul className="flex-1 px-3">
               {children}
             </ul>
           </SidebarContext.Provider>
-
 
           {/* foot section */}
           <div className="border-t rounded-md flex p-3">
