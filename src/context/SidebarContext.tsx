@@ -1,12 +1,9 @@
 import { createContext } from "react";
 
-const expanded = {
-  expandedMode: true,
-  toggleExpandedMode: () => {
-
-  },
+const expandedMode = {
+  expanded: true,
 }
 
-const SidebarContext = createContext(expanded);
+const SidebarContext = createContext(expandedMode);
 
 export default SidebarContext;
