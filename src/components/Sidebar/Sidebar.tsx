@@ -1,5 +1,4 @@
 import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
-import SidebarContext from "../../context/SidebarContext";
 import useExpandedStore from "../../store/Expanded";
 
 
@@ -35,11 +34,9 @@ const Sidebar = ({ children }: SidebarProps) => {
           </div>
 
           {/* Sidebar menu items */}
-          <SidebarContext.Provider value={{ expanded }}>
-            <ul className="flex-1 px-3">
-              {children}
-            </ul>
-          </SidebarContext.Provider>
+          <ul className="flex-1 px-3">
+            {children}
+          </ul>
 
           {/* foot section */}
           <div className="border-t rounded-md flex p-3">

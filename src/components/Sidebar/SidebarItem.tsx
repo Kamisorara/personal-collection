@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import SidebarContext from "../../context/SidebarContext";
+import useExpandedStore from "../../store/Expanded.tsx"
 
 interface SiderBarItemProps {
   icon: React.ReactNode;
@@ -9,15 +8,14 @@ interface SiderBarItemProps {
 }
 
 const SidebarItem = ({ icon, text, active, alert }: SiderBarItemProps) => {
-  const { expanded } = useContext(SidebarContext);
+  const { expanded } = useExpandedStore();
   return (
 
     <>
       <li className={`raletive flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group
           ${active ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
           : "hover:bg-indigo-50 text-gray-600"
-        }
-        `
+        }`
       }>
         {icon}
         <span className={`transition-all overflow-hidden ${expanded ? "w-52 ml-3" : "w-0"}`}>
@@ -31,8 +29,6 @@ const SidebarItem = ({ icon, text, active, alert }: SiderBarItemProps) => {
           {text}
         </div>}
       </li>
-
-
     </>
   );
 }
