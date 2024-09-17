@@ -52,8 +52,6 @@ const Sidebar = ({ children }: SidebarProps) => {
         </nav>
       </div>
     </>
-
-
   )
 };
 

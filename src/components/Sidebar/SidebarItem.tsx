@@ -1,21 +1,24 @@
+import { NavLink } from "react-router-dom";
 import useExpandedStore from "../../store/Expanded.tsx"
 
 interface SiderBarItemProps {
   icon: React.ReactNode;
   text: string;
-  active?: boolean;
   alert?: boolean;
+  linkPath: string;
 }
 
-const SidebarItem = ({ icon, text, active, alert }: SiderBarItemProps) => {
+const SidebarItem = ({ icon, text, alert, linkPath }: SiderBarItemProps) => {
   const { expanded } = useExpandedStore();
   return (
-
     <>
-      <li className={`raletive flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group
-          ${active ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+      <NavLink to={linkPath} className={({ isActive }) =>
+        `
+          raletive flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group
+          ${isActive ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
           : "hover:bg-indigo-50 text-gray-600"
-        }`
+        }
+        `
       }>
         {icon}
         <span className={`transition-all overflow-hidden ${expanded ? "w-52 ml-3" : "w-0"}`}>
@@ -28,7 +31,8 @@ const SidebarItem = ({ icon, text, active, alert }: SiderBarItemProps) => {
           `}>
           {text}
         </div>}
-      </li>
+      </NavLink>
+
     </>
   );
 }
