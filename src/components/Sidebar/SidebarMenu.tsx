@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import { SidebarData } from "./SidebarData";
 import React from "react";
 
-function SidebarMenu() {
+const SidebarMenu = () => {
   return (
     <>
       <Sidebar>

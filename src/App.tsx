@@ -7,7 +7,7 @@ function App() {
     <>
       <div className="flex">
         <SidebarMenu />
-        <div className="bg-gray-200 flex-grow">
+        <div className=" flex flex-grow m-2 p-2 rounded-xl bg-gray-100">
           <Routes>
             {SidebarData.map((item, index) => {
               return (
@@ -16,7 +16,6 @@ function App() {
             })}
           </Routes>
         </div>
-
       </div>
     </>
   );

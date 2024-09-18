@@ -20,7 +20,9 @@ const SidebarItem = ({ icon, text, alert, linkPath }: SiderBarItemProps) => {
         }
         `
       }>
-        {icon}
+        <div className="hover:scale-125 transition-all duration-300 ease-in-out">
+          {icon}
+        </div>
         <span className={`transition-all overflow-hidden ${expanded ? "w-52 ml-3" : "w-0"}`}>
           {text}
         </span>

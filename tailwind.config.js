@@ -2,7 +2,12 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '1/12': "8.3333%",
+        '1/10': '10%',
+      }
+    },
   },
   plugins: [],
 };
